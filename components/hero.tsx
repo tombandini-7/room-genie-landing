@@ -51,60 +51,73 @@ export function Hero() {
         <div className="absolute inset-0 grid-texture" />
       </div>
 
-      <Container className="relative z-10 text-center">
+      <Container className="relative z-10">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center"
+          className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16"
         >
-          {/* Logo */}
-          <motion.img
-            src={LOGO_URL}
-            alt="Room Genie"
-            variants={fadeUp}
-            custom={0}
-            className="h-24 sm:h-28 lg:h-32 w-auto mb-10"
-          />
+          {/* Left: Text content */}
+          <div className="flex-1 text-center lg:text-left">
+            {/* Headline */}
+            <motion.h1
+              variants={fadeUp}
+              custom={0.1}
+              className="font-display text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-semibold"
+              style={{ letterSpacing: "-0.025em", lineHeight: 1.1 }}
+            >
+              Never Miss Your Dream{" "}
+              <span className="text-gold-gradient">Disney Room</span>{" "}
+              Again
+            </motion.h1>
 
-          {/* Headline */}
-          <motion.h1
-            variants={fadeUp}
-            custom={0.15}
-            className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold max-w-4xl"
-            style={{ letterSpacing: "-0.025em", lineHeight: 1.1 }}
-          >
-            Never Miss Your Dream{" "}
-            <span className="text-gold-gradient">Disney Room</span>{" "}
-            Again
-          </motion.h1>
+            {/* Subheadline */}
+            <motion.p
+              variants={fadeUp}
+              custom={0.25}
+              className="mt-7 text-lg sm:text-xl text-text-secondary max-w-xl leading-relaxed"
+            >
+              Monitor Walt Disney World resort availability every 30 minutes
+              and compare live pricing across 10+ resorts.
+            </motion.p>
 
-          {/* Subheadline */}
-          <motion.p
-            variants={fadeUp}
-            custom={0.3}
-            className="mt-7 text-lg sm:text-xl text-text-secondary max-w-2xl leading-relaxed"
-          >
-            Monitor Walt Disney World resort availability every 30 minutes
-            and compare live pricing across 10+ resorts.
-          </motion.p>
+            {/* CTAs */}
+            <motion.div
+              variants={fadeUp}
+              custom={0.4}
+              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <Button href="https://app.roomgenie.travel" className="px-8 py-3.5">
+                Get Started
+              </Button>
+              <Button variant="outline" href="#pricing" className="px-8 py-3.5">
+                View Pricing
+              </Button>
+            </motion.div>
 
-          {/* CTAs */}
+            {/* SMS Badge */}
+            <motion.div variants={fadeUp} custom={0.5} className="mt-8 flex justify-center lg:justify-start">
+              <Badge variant="gold">SMS Alerts Coming Soon</Badge>
+            </motion.div>
+          </div>
+
+          {/* Right: Demo Video */}
           <motion.div
             variants={fadeUp}
-            custom={0.45}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
+            custom={0.3}
+            className="w-full lg:w-[55%] lg:flex-none"
           >
-            <Button href="https://app.roomgenie.travel" className="px-8 py-3.5">
-              Get Started
-            </Button>
-            <Button variant="outline" href="#pricing" className="px-8 py-3.5">
-              View Pricing
-            </Button>
-          </motion.div>
-
-          {/* SMS Badge */}
-          <motion.div variants={fadeUp} custom={0.55} className="mt-8">
-            <Badge variant="gold">SMS Alerts Coming Soon</Badge>
+            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/5">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="w-full"
+                src="/video/demo.mp4"
+              />
+            </div>
           </motion.div>
         </motion.div>
       </Container>
