@@ -1,0 +1,13 @@
+import { clsx } from "clsx";
+
+export function Container({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={clsx("mx-auto max-w-6xl px-6", className)}>{children}</div>
+  );
+}
