@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
-:root {
-  --primary: #061E29;
-  --primary-light: #0a2e3f;
-  --gold: #ba9d5d;
-  --gold-light: #d4b96a;
-  --gold-dark: #9a7f42;
-  --gold-muted: #ba9d5d33;
-}
-
 @theme inline {
-  --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
-  --color-gold-dark: var(--gold-dark);
-  --color-gold-muted: var(--gold-muted);
+  --color-primary: #061E29;
+  --color-primary-light: #0a2e3f;
+  --color-primary-dark: #041520;
+  --color-gold: #ba9d5d;
+  --color-gold-light: #d4b96a;
+  --color-gold-dark: #9a8249;
+  --color-gold-muted: #ba9d5d66;
+
+  --color-text-primary: rgba(255, 255, 255, 0.92);
+  --color-text-secondary: rgba(255, 255, 255, 0.55);
+  --color-text-tertiary: rgba(255, 255, 255, 0.35);
+
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-light: rgba(255, 255, 255, 0.10);
+
   --font-display: var(--font-playfair);
   --font-body: var(--font-dm-sans);
 }
@@ -26,24 +26,37 @@ html {
 }
 
 body {
-  background: var(--primary);
-  color: #ffffff;
-  font-family: var(--font-body), sans-serif;
+  background-color: #061E29;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: var(--gold);
-  color: var(--primary);
+  background-color: rgba(186, 157, 93, 0.35);
+  color: #fff;
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  background: linear-gradient(135deg, #d4b96a 0%, #ba9d5d 50%, #9a8249 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gold-border-glow {
-  border-color: var(--gold);
-  box-shadow: 0 0 20px rgba(186, 157, 93, 0.15), inset 0 0 20px rgba(186, 157, 93, 0.05);
+  box-shadow: 0 0 20px rgba(186, 157, 93, 0.12), 0 0 40px rgba(186, 157, 93, 0.06);
+}
+
+/* Subtle grid texture overlay */
+.grid-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
 }

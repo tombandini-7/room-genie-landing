@@ -1,21 +1,21 @@
-import { clsx } from "clsx";
+import clsx from "clsx";
 
 export function Card({
-  variant = "default",
   children,
+  highlighted = false,
   className,
 }: {
-  variant?: "default" | "highlighted";
   children: React.ReactNode;
+  highlighted?: boolean;
   className?: string;
 }) {
   return (
     <div
       className={clsx(
-        "rounded-2xl border p-6 transition-all duration-300",
-        variant === "highlighted"
-          ? "gold-border-glow scale-[1.02] bg-white/[0.05] border-gold/40"
-          : "bg-white/[0.03] border-white/5 hover:border-white/10",
+        "rounded-xl p-6 sm:p-8 transition-all duration-300",
+        highlighted
+          ? "gold-border-glow border border-gold/30 bg-white/[0.04]"
+          : "bg-white/[0.02] border border-white/[0.06]",
         className
       )}
     >

@@ -1,51 +1,47 @@
-import { clsx } from "clsx";
+import clsx from "clsx";
 
-const variants = {
-  solid:
-    "bg-gold text-primary hover:bg-gold-light font-semibold",
-  outline:
-    "border border-white/20 text-white hover:border-gold hover:text-gold",
-};
+type ButtonVariant = "solid" | "outline" | "ghost";
 
-const sizes = {
-  default: "px-6 py-2.5 text-sm",
-  large: "px-8 py-3.5 text-base",
-};
-
-type ButtonProps = {
-  variant?: keyof typeof variants;
-  size?: keyof typeof sizes;
-  className?: string;
+interface ButtonProps {
   children: React.ReactNode;
-} & (
-  | React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }
-  | React.ButtonHTMLAttributes<HTMLButtonElement> & { href?: never }
-);
+  variant?: ButtonVariant;
+  href?: string;
+  className?: string;
+  onClick?: () => void;
+}
+
+const variants: Record<ButtonVariant, string> = {
+  solid:
+    "bg-gold text-primary font-semibold shadow-lg shadow-gold/20 hover:bg-gold-light active:bg-gold-dark",
+  outline:
+    "border border-white/20 text-text-primary hover:border-gold/50 hover:text-gold",
+  ghost:
+    "text-text-secondary hover:text-text-primary",
+};
 
 export function Button({
-  variant = "solid",
-  size = "default",
-  className,
   children,
-  ...props
+  variant = "solid",
+  href,
+  className,
+  onClick,
 }: ButtonProps) {
-  const cls = clsx(
-    "inline-flex items-center justify-center rounded-lg transition-all duration-200 cursor-pointer",
+  const classes = clsx(
+    "inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm tracking-wide transition-all duration-300",
     variants[variant],
-    sizes[size],
     className
   );
 
-  if ("href" in props && props.href) {
+  if (href) {
     return (
-      <a className={cls} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+      <a href={href} className={classes}>
         {children}
       </a>
     );
   }
 
   return (
-    <button className={cls} {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}>
+    <button onClick={onClick} className={classes}>
       {children}
     </button>
   );

@@ -1,60 +1,112 @@
 "use client";
 
-import { Container } from "@/components/ui/container";
-import { SectionReveal } from "@/components/ui/section-reveal";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { Container } from "./ui/container";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
+
+const LOGO_URL =
+  "https://xrcwdxbwtnmxyahbgrlw.supabase.co/storage/v1/object/public/app-assets/logos/Room%20Genie%20-%20Small%20-%20Transparent.png";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      delay,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
+};
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-16">
-      {/* Radial gold gradient overlay */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(186,157,93,0.08) 0%, transparent 70%)",
-        }}
-      />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Layered background gradients */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(186, 157, 93, 0.08) 0%, transparent 60%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 40% at 70% 80%, rgba(186, 157, 93, 0.04) 0%, transparent 50%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 40% 30% at 20% 60%, rgba(186, 157, 93, 0.03) 0%, transparent 50%)",
+          }}
+        />
+        {/* Grid texture */}
+        <div className="absolute inset-0 grid-texture" />
+      </div>
 
-      <Container className="relative z-10 py-20 text-center">
-        <SectionReveal>
-          <Badge variant="muted" className="mb-8">
-            Walt Disney World Resort Monitoring
-          </Badge>
-        </SectionReveal>
+      <Container className="relative z-10 text-center">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center"
+        >
+          {/* Logo */}
+          <motion.img
+            src={LOGO_URL}
+            alt="Room Genie"
+            variants={fadeUp}
+            custom={0}
+            className="h-24 sm:h-28 lg:h-32 w-auto mb-10"
+          />
 
-        <SectionReveal delay={0.1}>
-          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
+          {/* Headline */}
+          <motion.h1
+            variants={fadeUp}
+            custom={0.15}
+            className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold max-w-4xl"
+            style={{ letterSpacing: "-0.025em", lineHeight: 1.1 }}
+          >
             Never Miss Your Dream{" "}
-            <span className="text-gold-gradient">Disney Room</span> Again
-          </h1>
-        </SectionReveal>
+            <span className="text-gold-gradient">Disney Room</span>{" "}
+            Again
+          </motion.h1>
 
-        <SectionReveal delay={0.2}>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-white/60 sm:text-lg lg:text-xl">
-            Room Genie monitors Walt Disney World resort availability every 30
-            minutes and compares live pricing across 10+ resorts — so you can
-            book the perfect room at the best price.
-          </p>
-        </SectionReveal>
+          {/* Subheadline */}
+          <motion.p
+            variants={fadeUp}
+            custom={0.3}
+            className="mt-7 text-lg sm:text-xl text-text-secondary max-w-2xl leading-relaxed"
+          >
+            Monitor Walt Disney World resort availability every 30 minutes
+            and compare live pricing across 10+ resorts.
+          </motion.p>
 
-        <SectionReveal delay={0.3}>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="https://app.roomgenie.travel" size="large">
+          {/* CTAs */}
+          <motion.div
+            variants={fadeUp}
+            custom={0.45}
+            className="mt-10 flex flex-col sm:flex-row gap-4"
+          >
+            <Button href="https://app.roomgenie.travel" className="px-8 py-3.5">
               Get Started
             </Button>
-            <Button href="#pricing" variant="outline" size="large">
-              See Pricing
+            <Button variant="outline" href="#pricing" className="px-8 py-3.5">
+              View Pricing
             </Button>
-          </div>
-        </SectionReveal>
+          </motion.div>
 
-        <SectionReveal delay={0.4}>
-          <div className="mt-10">
+          {/* SMS Badge */}
+          <motion.div variants={fadeUp} custom={0.55} className="mt-8">
             <Badge variant="gold">SMS Alerts Coming Soon</Badge>
-          </div>
-        </SectionReveal>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );

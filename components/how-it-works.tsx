@@ -1,26 +1,25 @@
 "use client";
 
-import { Container } from "@/components/ui/container";
-import { SectionReveal } from "@/components/ui/section-reveal";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Container } from "./ui/container";
+import { SectionReveal } from "./ui/section-reveal";
+import { SectionHeading } from "./ui/section-heading";
+import { Divider } from "./ui/divider";
 
 const alertSteps = [
   {
-    step: "01",
+    number: "1",
     title: "Set Your Alert",
     description:
-      "Pick your resort, room type, and travel dates. Set a target price if you want price-drop notifications.",
+      "Pick your resort, room type, and travel dates. Set a target price for price-drop notifications.",
   },
   {
-    step: "02",
+    number: "2",
     title: "We Watch For You",
     description:
-      "Room Genie checks Disney every 30 minutes, 24/7 — so you don't have to keep refreshing.",
+      "Room Genie checks Disney every 30 minutes, 24/7. No manual refreshing required.",
   },
   {
-    step: "03",
+    number: "3",
     title: "Get Notified Instantly",
     description:
       "Receive an email the moment your room becomes available or the price drops below your target.",
@@ -29,60 +28,72 @@ const alertSteps = [
 
 const exploreSteps = [
   {
-    step: "01",
+    number: "1",
     title: "Enter Your Trip Details",
     description:
-      "Package type, travel dates, number of guests — enter your details once.",
+      "Package type, dates, and number of guests — enter your details once.",
   },
   {
-    step: "02",
+    number: "2",
     title: "Compare Every Resort",
     description:
-      "See live pricing across 10+ Walt Disney World resorts side by side, updated in real time.",
+      "See live pricing across 10+ Walt Disney World resorts displayed side by side.",
   },
   {
-    step: "03",
+    number: "3",
     title: "Book the Best Deal",
     description:
-      "Compare rooms, tickets, dining plans, and Memory Maker all in one place — then book directly with Disney.",
+      "Rooms, tickets, dining plans, and Memory Maker — all compared so you can find the best value.",
   },
 ];
 
-function StepCards({
-  label,
+function StepColumn({
+  title,
   steps,
-  delayOffset = 0,
 }: {
-  label: string;
+  title: string;
   steps: typeof alertSteps;
-  delayOffset?: number;
 }) {
   return (
     <div>
-      <SectionReveal delay={delayOffset}>
-        <Badge variant="gold" className="mb-6">
-          {label}
-        </Badge>
-      </SectionReveal>
-      <div className="flex flex-col gap-4">
+      <h3
+        className="text-gold font-display text-xl sm:text-2xl font-semibold mb-10"
+        style={{ letterSpacing: "-0.02em" }}
+      >
+        {title}
+      </h3>
+      <div className="space-y-0">
         {steps.map((step, i) => (
-          <SectionReveal key={step.step} delay={delayOffset + 0.1 + i * 0.1}>
-            <Card>
-              <div className="flex gap-4">
-                <span className="font-display text-2xl font-bold text-gold/30">
-                  {step.step}
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-white">
-                    {step.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-white/50">
-                    {step.description}
-                  </p>
-                </div>
+          <div key={step.number} className="relative flex gap-5">
+            {/* Connector line + number */}
+            <div className="flex flex-col items-center">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold text-sm font-semibold">
+                {step.number}
               </div>
-            </Card>
-          </SectionReveal>
+              {i < steps.length - 1 && (
+                <div
+                  className="w-px flex-1 my-1"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(186, 157, 93, 0.25), rgba(186, 157, 93, 0.05))",
+                  }}
+                />
+              )}
+            </div>
+
+            {/* Content */}
+            <div className={i < steps.length - 1 ? "pb-10" : "pb-0"}>
+              <h4
+                className="text-text-primary font-medium text-base mb-1.5"
+                style={{ letterSpacing: "-0.01em" }}
+              >
+                {step.title}
+              </h4>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
@@ -91,23 +102,24 @@ function StepCards({
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 sm:py-32">
+    <section id="features" className="py-24 sm:py-32 relative">
       <Container>
         <SectionReveal>
-          <SectionHeading
-            title="How It Works"
-            subtitle="Two powerful tools to help you find and book the perfect Disney resort room."
-            gold
-          />
+          <SectionHeading>How It Works</SectionHeading>
+          <p className="mt-5 text-center text-text-secondary max-w-2xl mx-auto">
+            Two powerful tools to help you find the perfect Disney resort room at the best price.
+          </p>
         </SectionReveal>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-8">
-          <StepCards label="Availability Alerts" steps={alertSteps} />
-          <StepCards
-            label="Explore Rates"
-            steps={exploreSteps}
-            delayOffset={0.2}
-          />
+        <Divider />
+
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+          <SectionReveal delay={0.1}>
+            <StepColumn title="Availability Alerts" steps={alertSteps} />
+          </SectionReveal>
+          <SectionReveal delay={0.25}>
+            <StepColumn title="Explore Rates" steps={exploreSteps} />
+          </SectionReveal>
         </div>
       </Container>
     </section>

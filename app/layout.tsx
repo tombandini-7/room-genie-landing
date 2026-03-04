@@ -3,35 +3,37 @@ import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
-  variable: "--font-playfair",
   subsets: ["latin"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
 const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
   subsets: ["latin"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Room Genie — Walt Disney World Resort Monitoring & Price Comparison",
+  title: "Room Genie — Walt Disney World Resort Availability Alerts & Price Comparison",
   description:
-    "Never miss your dream Disney room again. Room Genie monitors Walt Disney World resort availability every 30 minutes and compares live pricing across 10+ resorts.",
+    "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across 10+ resorts. Get notified instantly when your dream Disney room opens up.",
+  openGraph: {
+    title: "Room Genie — Never Miss Your Dream Disney Room",
+    description:
+      "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across 10+ resorts.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${playfair.variable} ${dmSans.variable} font-body antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

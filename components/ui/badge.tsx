@@ -1,24 +1,22 @@
-import { clsx } from "clsx";
-
-const variants = {
-  gold: "bg-gold/10 text-gold border-gold/20",
-  muted: "bg-white/5 text-white/60 border-white/10",
-};
+import clsx from "clsx";
 
 export function Badge({
-  variant = "muted",
   children,
+  variant = "gold",
   className,
 }: {
-  variant?: keyof typeof variants;
   children: React.ReactNode;
+  variant?: "gold" | "muted";
   className?: string;
 }) {
   return (
     <span
       className={clsx(
-        "inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide uppercase",
-        variants[variant],
+        "inline-flex items-center rounded-md px-3 py-1 text-xs font-medium tracking-wider uppercase",
+        variant === "gold" &&
+          "bg-gold/10 text-gold border border-gold/20",
+        variant === "muted" &&
+          "bg-white/5 text-text-secondary border border-white/10",
         className
       )}
     >

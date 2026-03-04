@@ -1,28 +1,29 @@
 "use client";
 
-import { Container } from "@/components/ui/container";
-import { SectionReveal } from "@/components/ui/section-reveal";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Accordion } from "@/components/ui/accordion";
+import { Container } from "./ui/container";
+import { SectionReveal } from "./ui/section-reveal";
+import { SectionHeading } from "./ui/section-heading";
+import { Accordion } from "./ui/accordion";
+import { Divider } from "./ui/divider";
 
-const faqData = [
+const faqGroups = [
   {
     category: "Getting Started",
     items: [
       {
         question: "What is Room Genie?",
         answer:
-          "Room Genie is a monitoring tool for Walt Disney World resorts. It tracks room availability and pricing so you can get notified the moment your desired room opens up or drops in price — and compare live rates across 10+ resorts.",
+          "Room Genie is a monitoring service for Walt Disney World resort availability and pricing. Set alerts for your desired resort, room type, and dates — and get notified when a room opens up or a price drops below your target.",
       },
       {
-        question: "How do I get started?",
+        question: "Is there a free trial?",
         answer:
-          "Create a free account, then either purchase a single alert credit or subscribe to a plan. Set your resort, room type, and travel dates — Room Genie handles the rest.",
+          "There is no free trial or free tier. However, single alert credits are available for purchase without a subscription, so you can try the service without committing to a monthly plan.",
       },
       {
-        question: "Do I need a subscription to use Room Genie?",
+        question: "Which parks does Room Genie support?",
         answer:
-          "No. You can purchase individual alert credits at $5 each with no subscription required. Subscriptions (Watcher and Explorer) are available if you want unlimited alerts and additional features.",
+          "Room Genie monitors all Walt Disney World resort properties, including Value, Moderate, Deluxe, and Deluxe Villa resorts.",
       },
     ],
   },
@@ -30,24 +31,19 @@ const faqData = [
     category: "Availability Alerts",
     items: [
       {
-        question: "How often does Room Genie check for availability?",
+        question: "How does an availability alert work?",
         answer:
-          "Room Genie checks Disney resort availability every 30 minutes, 24/7. You'll be notified the moment your room becomes available or the price drops below your target.",
+          "You set your desired resort, room type, and travel dates. Room Genie checks Disney's system every 30 minutes. When your room becomes available, you receive an email notification right away.",
       },
       {
-        question: "What types of notifications will I receive?",
+        question: "What's the difference between an availability alert and a price alert?",
         answer:
-          "You'll receive email notifications when your alert conditions are met. SMS notifications are coming soon.",
+          "An availability alert notifies you any time a room becomes bookable. A price alert only notifies you when the price drops below a target you set — useful for snagging deals on rooms that are already available.",
       },
       {
-        question: "Can I set a target price for my alert?",
+        question: "How will I be notified?",
         answer:
-          "Yes. When creating an alert, you can set a target price. Room Genie will notify you when the price drops below that amount.",
-      },
-      {
-        question: "Can I edit or pause an alert after creating it?",
-        answer:
-          "Yes — with a Watcher or Explorer subscription, you can edit, pause, and reactivate your alerts at any time.",
+          "Notifications are sent via email. SMS notifications are coming very soon.",
       },
     ],
   },
@@ -57,17 +53,12 @@ const faqData = [
       {
         question: "What is Explore Rates?",
         answer:
-          "Explore Rates lets you compare live pricing across 10+ Walt Disney World resorts simultaneously. Enter your trip details once and see rooms, tickets, dining plans, and Memory Maker pricing side by side.",
+          "Explore Rates lets you enter your trip details once and compare live pricing across 10+ Walt Disney World resorts simultaneously — including rooms, tickets, dining plans, and Memory Maker.",
       },
       {
-        question: "Where does the pricing data come from?",
+        question: "How current is the pricing data?",
         answer:
-          "Explore Rates pulls live pricing directly from Disney's website, so you always see the most up-to-date rates.",
-      },
-      {
-        question: "Which plan includes Explore Rates?",
-        answer:
-          "Explore Rates is available exclusively on the Explorer plan ($29/mo), which includes everything in the Watcher plan plus the full rate comparison tool.",
+          "Pricing is pulled live from Disney at the time of your search, so you're always seeing the most up-to-date rates available.",
       },
     ],
   },
@@ -75,19 +66,19 @@ const faqData = [
     category: "Plans & Credits",
     items: [
       {
-        question: "What's included in the Single Alert plan?",
+        question: "Can I cancel anytime?",
         answer:
-          "Each single alert credit costs $5 and lets you set one availability or price drop alert. You can purchase 1–10 credits at a time. Credits expire after 1 year from purchase.",
+          "Yes. Both the Watcher and Explorer plans can be cancelled at any time with no penalty or commitment.",
       },
       {
-        question: "What's the difference between Watcher and Explorer?",
+        question: "Do credits expire?",
         answer:
-          "Watcher ($19/mo) gives you unlimited alerts with the ability to edit, pause, and reactivate them, plus SMS and email notifications. Explorer ($29/mo) includes everything in Watcher plus Explore Rates — live pricing comparison across 10+ resorts for rooms, tickets, dining, and Memory Maker.",
+          "Single alert credits expire 1 year from the date of purchase.",
       },
       {
-        question: "Do single alert credits expire?",
+        question: "What if I run out of credits?",
         answer:
-          "Yes. Single alert credits expire 1 year after purchase. Subscriptions (Watcher and Explorer) provide unlimited alerts for as long as your subscription is active.",
+          "Watcher and Explorer subscribers have unlimited alerts — no credits to worry about. If you're on single alerts, you can purchase additional credits at any time.",
       },
     ],
   },
@@ -95,19 +86,14 @@ const faqData = [
     category: "Account & Billing",
     items: [
       {
-        question: "Can I cancel my subscription anytime?",
+        question: "What happens if my payment fails?",
         answer:
-          "Yes. You can cancel your Watcher or Explorer subscription at any time. There's no commitment or cancellation fee.",
-      },
-      {
-        question: "How do I manage my subscription?",
-        answer:
-          "You can manage your subscription, update your payment method, and view billing history from your account settings in the Room Genie app.",
+          "Your subscription moves to a past-due status. You'll see a banner in the app prompting you to update your payment method.",
       },
       {
         question: "Can I upgrade or downgrade my plan?",
         answer:
-          "Yes. You can upgrade from Watcher to Explorer or downgrade from Explorer to Watcher at any time from your account settings.",
+          "Yes. Upgrading from Watcher to Explorer is prorated and takes effect immediately ($10/mo more). Downgrading from Explorer to Watcher transitions at the end of your current billing period.",
       },
     ],
   },
@@ -115,27 +101,29 @@ const faqData = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 sm:py-32">
-      <Container>
+    <section id="faq" className="py-24 sm:py-32 relative">
+      <Container className="max-w-3xl">
         <SectionReveal>
-          <SectionHeading
-            title="Frequently Asked Questions"
-            subtitle="Everything you need to know about Room Genie."
-            gold
-          />
+          <SectionHeading>Frequently Asked Questions</SectionHeading>
         </SectionReveal>
 
-        <div className="mx-auto mt-16 max-w-3xl">
-          {faqData.map((category, catIdx) => (
-            <SectionReveal key={category.category} delay={catIdx * 0.05}>
-              <div className="mt-10 first:mt-0">
-                <h3 className="mb-2 font-display text-lg font-semibold text-gold">
-                  {category.category}
-                </h3>
-                {category.items.map((item) => (
-                  <Accordion key={item.question} title={item.question}>
-                    {item.answer}
-                  </Accordion>
+        <Divider />
+
+        <div className="mt-14 space-y-12">
+          {faqGroups.map((group, i) => (
+            <SectionReveal key={group.category} delay={i * 0.08}>
+              <h3
+                className="text-gold font-display text-base font-semibold tracking-wide mb-2"
+              >
+                {group.category}
+              </h3>
+              <div>
+                {group.items.map((item) => (
+                  <Accordion
+                    key={item.question}
+                    question={item.question}
+                    answer={item.answer}
+                  />
                 ))}
               </div>
             </SectionReveal>

@@ -2,53 +2,55 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { clsx } from "clsx";
+import clsx from "clsx";
 
 export function Accordion({
-  title,
-  children,
-  className,
+  question,
+  answer,
 }: {
-  title: string;
-  children: React.ReactNode;
-  className?: string;
+  question: string;
+  answer: string;
 }) {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={clsx("border-b border-white/10", className)}>
+    <div className="border-b border-white/[0.06]">
       <button
-        onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between py-5 text-left cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+        className="group flex w-full items-center justify-between py-5 text-left"
       >
-        <span className="text-sm font-medium text-white sm:text-base">
-          {title}
-        </span>
-        <svg
+        <span
           className={clsx(
-            "h-4 w-4 shrink-0 text-white/40 transition-transform duration-200",
-            open && "rotate-180"
+            "text-sm sm:text-base font-medium transition-colors duration-300",
+            isOpen ? "text-gold" : "text-text-primary group-hover:text-gold"
           )}
+        >
+          {question}
+        </span>
+        <motion.svg
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="ml-4 h-4 w-4 shrink-0 text-text-tertiary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth={2}
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
+        </motion.svg>
       </button>
       <AnimatePresence initial={false}>
-        {open && (
+        {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="overflow-hidden"
           >
-            <div className="pb-5 text-sm leading-relaxed text-white/60">
-              {children}
-            </div>
+            <p className="pb-5 text-sm leading-relaxed text-text-secondary">
+              {answer}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
