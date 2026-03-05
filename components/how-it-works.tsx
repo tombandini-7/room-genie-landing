@@ -22,7 +22,7 @@ const alertSteps = [
     number: "3",
     title: "Get Notified Instantly",
     description:
-      "Receive an email the moment your room becomes available or the price drops below your target.",
+      "Receive an email when your room becomes available or the price drops below your target.",
   },
 ];
 
@@ -41,7 +41,7 @@ const exploreSteps = [
   },
   {
     number: "3",
-    title: "Book the Best Deal",
+    title: "Find the Best Value",
     description:
       "Rooms, tickets, dining plans, and Memory Maker — all compared so you can find the best value.",
   },

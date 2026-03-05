@@ -14,45 +14,48 @@ const plans = [
     name: "Single Alert",
     price: "$5",
     unit: "/alert",
+    subtitle: "Try it risk-free — no subscription",
     badge: null,
     highlighted: false,
     cta: "Get Started",
     features: [
-      "One-time purchase",
-      "Availability & price drop alerts",
-      "Email notifications (SMS coming soon)",
+      "Notified when your room opens up or drops in price",
+      "Email notifications",
       "Purchase 1–10 credits at a time",
-      "Credits expire after 1 year",
+      "Credits last a full year",
+      "No subscription required",
     ],
   },
   {
     name: "Watcher",
     price: "$19",
     unit: "/mo",
+    subtitle: "Monitor every resort — miss nothing",
     badge: "Most Popular",
     highlighted: true,
     cta: "Start Watching",
     features: [
-      "Unlimited alerts",
-      "Edit, pause & reactivate anytime",
-      "Email + SMS notifications",
-      "Monitor all WDW resorts",
-      "Cancel anytime",
+      "Unlimited alerts across all WDW resorts",
+      "Edit, pause & reactivate any alert anytime",
+      "Email notifications when conditions are met",
+      "Monitor every room type at every resort",
+      "Cancel anytime — no commitment",
     ],
   },
   {
     name: "Explorer",
     price: "$29",
     unit: "/mo",
+    subtitle: "The complete Disney trip planning toolkit",
     badge: "Best Value",
     highlighted: false,
     cta: "Start Exploring",
     features: [
-      "Everything in Watcher",
-      "Explore Rates: 10+ resorts compared",
-      "Live Disney pricing",
-      "Rooms, tickets, dining & Memory Maker",
-      "Cancel anytime",
+      "Everything in Watcher, plus Explore Rates",
+      "Compare 10+ resorts side by side in one search",
+      "See full trip pricing — rooms, tickets, dining & Memory Maker",
+      "Live pricing from publicly available Disney sources",
+      "Find the best value resort for your dates instantly",
     ],
   },
 ];
@@ -88,14 +91,17 @@ export function Pricing() {
           {plans.map((plan, i) => (
             <SectionReveal key={plan.name} delay={i * 0.1}>
               <Card highlighted={plan.highlighted} className="flex flex-col h-full">
-                <div className="flex items-center justify-between mb-5">
-                  <h3
-                    className="font-display text-lg font-semibold text-text-primary"
-                    style={{ letterSpacing: "-0.01em" }}
-                  >
-                    {plan.name}
-                  </h3>
-                  {plan.badge && <Badge variant="gold">{plan.badge}</Badge>}
+                <div className="mb-5">
+                  <div className="flex items-center justify-between">
+                    <h3
+                      className="font-display text-lg font-semibold text-text-primary"
+                      style={{ letterSpacing: "-0.01em" }}
+                    >
+                      {plan.name}
+                    </h3>
+                    {plan.badge && <Badge variant="gold">{plan.badge}</Badge>}
+                  </div>
+                  <p className="mt-1.5 text-xs text-text-tertiary">{plan.subtitle}</p>
                 </div>
 
                 <div className="flex items-baseline gap-1 mb-6">
@@ -132,6 +138,10 @@ export function Pricing() {
             </SectionReveal>
           ))}
         </div>
+
+        <p className="mt-6 text-center text-xs text-text-tertiary">
+          SMS alerts coming soon. Email notifications are live today.
+        </p>
       </Container>
     </section>
   );

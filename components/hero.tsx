@@ -116,7 +116,7 @@ export function Hero() {
                 playsInline
                 controls
                 className="w-full"
-                src="/video/demo.mp4"
+                src="/video/demo-v8.mp4"
               />
             </div>
           </motion.div>
