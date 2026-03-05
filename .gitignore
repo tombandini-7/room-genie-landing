@@ -34,3 +34,4 @@ next-env.d.ts
 
 # Remotion demo project (built separately)
 room-genie-demo/
+.vercel
