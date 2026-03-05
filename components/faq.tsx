@@ -53,7 +53,7 @@ const faqGroups = [
       {
         question: "What is Explore Rates?",
         answer:
-          "Explore Rates lets you enter your trip details once and compare live pricing across 10+ Walt Disney World resorts simultaneously — including rooms, tickets, dining plans, and Memory Maker.",
+          "Explore Rates lets you enter your trip details once and compare live pricing across multiple Walt Disney World resorts simultaneously — including rooms, tickets, dining plans, and Memory Maker.",
       },
       {
         question: "How current is the pricing data?",

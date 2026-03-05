@@ -52,7 +52,7 @@ const plans = [
     cta: "Start Exploring",
     features: [
       "Everything in Watcher, plus Explore Rates",
-      "Compare 10+ resorts side by side in one search",
+      "Compare multiple resorts side by side in one search",
       "See full trip pricing — rooms, tickets, dining & Memory Maker",
       "Live pricing from publicly available Disney sources",
       "Find the best value resort for your dates instantly",

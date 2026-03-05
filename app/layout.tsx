@@ -15,9 +15,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Room Genie — Walt Disney World Resort Availability Alerts & Price Comparison",
+  title: "Disney Resort Reservation Alerts & Rates - Room Genie",
   description:
-    "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across 10+ resorts. Get notified instantly when your dream Disney room opens up.",
+    "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across multiple resorts at one time. Get notified when your dream Disney room opens up.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Room Genie — Never Miss Your Dream Disney Room",
     description:
-      "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across 10+ resorts.",
+      "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across multiple resorts.",
     type: "website",
   },
 };

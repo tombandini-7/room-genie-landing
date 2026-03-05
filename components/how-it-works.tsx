@@ -37,7 +37,7 @@ const exploreSteps = [
     number: "2",
     title: "Compare Every Resort",
     description:
-      "See live pricing across 10+ Walt Disney World resorts displayed side by side.",
+      "See live pricing across multiple Walt Disney World resorts displayed side by side.",
   },
   {
     number: "3",
