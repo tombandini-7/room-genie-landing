@@ -7,6 +7,7 @@ import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Divider } from "./ui/divider";
+import { SIGNUP_URL } from "@/lib/urls";
 
 const plans = [
   {
@@ -121,7 +122,7 @@ export function Pricing() {
                 </ul>
 
                 <Button
-                  href="https://app.roomgenie.travel"
+                  href={SIGNUP_URL}
                   variant={plan.highlighted ? "solid" : "outline"}
                   className="w-full"
                 >
