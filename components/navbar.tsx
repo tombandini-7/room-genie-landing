@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
+import { SIGNUP_URL } from "@/lib/urls";
 
 const LOGO_URL =
   "https://xrcwdxbwtnmxyahbgrlw.supabase.co/storage/v1/object/public/app-assets/logos/Room%20Genie%20-%20Small%20-%20Transparent.png";
@@ -59,7 +60,7 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button href="https://app.roomgenie.travel" className="text-xs px-5 py-2.5">
+            <Button href={SIGNUP_URL} className="text-xs px-5 py-2.5">
               Get Started
             </Button>
           </div>
@@ -116,7 +117,7 @@ export function Navbar() {
                 </a>
               ))}
               <Button
-                href="https://app.roomgenie.travel"
+                href={SIGNUP_URL}
                 className="mt-2 w-full text-center"
               >
                 Get Started

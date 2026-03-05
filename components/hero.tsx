@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { SIGNUP_URL } from "@/lib/urls";
 
 const LOGO_URL =
   "https://xrcwdxbwtnmxyahbgrlw.supabase.co/storage/v1/object/public/app-assets/logos/Room%20Genie%20-%20Small%20-%20Transparent.png";
@@ -87,7 +88,7 @@ export function Hero() {
               custom={0.4}
               className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button href="https://app.roomgenie.travel" className="px-8 py-3.5">
+              <Button href={SIGNUP_URL} className="px-8 py-3.5">
                 Get Started
               </Button>
               <Button variant="outline" href="#pricing" className="px-8 py-3.5">

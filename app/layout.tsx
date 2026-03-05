@@ -18,6 +18,15 @@ export const metadata: Metadata = {
   title: "Room Genie — Walt Disney World Resort Availability Alerts & Price Comparison",
   description:
     "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across 10+ resorts. Get notified instantly when your dream Disney room opens up.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Room Genie — Never Miss Your Dream Disney Room",
     description:
