@@ -10,9 +10,9 @@ const LOGO_URL =
   "https://xrcwdxbwtnmxyahbgrlw.supabase.co/storage/v1/object/public/app-assets/logos/Room%20Genie%20-%20Small%20-%20Transparent.png";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Navbar() {
@@ -39,7 +39,8 @@ export function Navbar() {
           className="flex items-center justify-between transition-all duration-500"
           style={{ padding: scrolled ? "0.75rem 0" : "1.25rem 0" }}
         >
-          <a href="#" className="shrink-0">
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/" className="shrink-0">
             <motion.img
               src={LOGO_URL}
               alt="Room Genie"

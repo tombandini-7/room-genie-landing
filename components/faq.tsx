@@ -33,7 +33,7 @@ const faqGroups = [
       {
         question: "How does an availability alert work?",
         answer:
-          "You set your desired resort, room type, and travel dates. Room Genie checks Disney's system every 30 minutes. When your room becomes available, you receive an email notification right away.",
+          "You set your desired resort, room type, and travel dates. Room Genie checks Disney resort availability every 30 minutes. When your room becomes available, we send you an email notification.",
       },
       {
         question: "What's the difference between an availability alert and a price alert?",
@@ -53,12 +53,12 @@ const faqGroups = [
       {
         question: "What is Explore Rates?",
         answer:
-          "Explore Rates lets you enter your trip details once and compare live pricing across 10+ Walt Disney World resorts simultaneously — including rooms, tickets, dining plans, and Memory Maker.",
+          "Explore Rates lets you enter your trip details once and compare live pricing across multiple Walt Disney World resorts simultaneously — including rooms, tickets, dining plans, and Memory Maker.",
       },
       {
         question: "How current is the pricing data?",
         answer:
-          "Pricing is pulled live from Disney at the time of your search, so you're always seeing the most up-to-date rates available.",
+          "Pricing is retrieved from publicly available Disney sources at the time of your search, so you're seeing current rates. Always verify directly with Disney before booking.",
       },
     ],
   },

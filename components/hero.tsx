@@ -6,9 +6,6 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { SIGNUP_URL } from "@/lib/urls";
 
-const LOGO_URL =
-  "https://xrcwdxbwtnmxyahbgrlw.supabase.co/storage/v1/object/public/app-assets/logos/Room%20Genie%20-%20Small%20-%20Transparent.png";
-
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (delay: number) => ({
@@ -78,8 +75,8 @@ export function Hero() {
               custom={0.25}
               className="mt-7 text-lg sm:text-xl text-text-secondary max-w-xl leading-relaxed"
             >
-              Monitor Walt Disney World resort availability every 30 minutes
-              and compare live pricing across 10+ resorts.
+              Monitor Walt Disney World resort availability with alerting
+              and/or compare live pricing across multiple resorts with the click of a button.
             </motion.p>
 
             {/* CTAs */}
@@ -116,7 +113,7 @@ export function Hero() {
                 playsInline
                 controls
                 className="w-full"
-                src="/video/demo.mp4"
+                src="/video/demo-v8.mp4"
               />
             </div>
           </motion.div>
