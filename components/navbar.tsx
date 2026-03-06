@@ -18,11 +18,18 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    onResize();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   return (
@@ -37,14 +44,14 @@ export function Navbar() {
       <Container>
         <div
           className="flex items-center justify-between transition-all duration-500"
-          style={{ padding: scrolled ? "0.75rem 0" : "1.25rem 0" }}
+          style={{ padding: scrolled ? "0.5rem 0" : (isMobile ? "0.75rem 0" : "1.25rem 0") }}
         >
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/" className="shrink-0">
             <motion.img
               src={LOGO_URL}
               alt="Room Genie"
-              animate={{ height: scrolled ? 50 : 100 }}
+              animate={{ height: scrolled ? (isMobile ? 36 : 50) : (isMobile ? 48 : 100) }}
               transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="w-auto"
             />
