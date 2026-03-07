@@ -168,6 +168,15 @@ export function PrivacyContent() {
             We use cookies that are strictly necessary for the operation of the Services, specifically for authentication and session management. These cookies allow you to remain signed in and are required for the Services to function.
           </p>
           <p className="mt-2">
+            We also use Google Analytics 4 (GA4) to collect anonymous usage data about how visitors interact with our marketing website. GA4 sets cookies (including <code className="text-text-primary/80">_ga</code> and <code className="text-text-primary/80">_ga_*</code>) to distinguish unique visitors and track session information. GA4 also derives your approximate geographic location (country, region, city) from your IP address; however, Google anonymizes your IP address and we do not have access to it. This data helps us understand which pages and features are most useful, measure the effectiveness of our content, and improve the overall experience. GA4 data is aggregated and does not identify you personally.
+          </p>
+          <p className="mt-2">
+            Google&apos;s use of analytics data is governed by the{' '}
+            <a href="https://policies.google.com/privacy" className="text-gold underline hover:text-gold-light" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
+            You can opt out of Google Analytics by installing the{' '}
+            <a href="https://tools.google.com/dlpage/gaoptout" className="text-gold underline hover:text-gold-light" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.
+          </p>
+          <p className="mt-2">
             We do not use cookies for advertising, behavioral tracking, or cross-site profiling. We do not deploy third-party advertising cookies or tracking pixels.
           </p>
           <p className="mt-2">

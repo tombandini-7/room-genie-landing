@@ -5,6 +5,7 @@ import { Container } from "./ui/container";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { SIGNUP_URL } from "@/lib/urls";
+import { trackCta, trackAppNavigation } from "@/lib/analytics";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -21,7 +22,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-0">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-0">
       {/* Layered background gradients */}
       <div className="absolute inset-0">
         <div
@@ -85,10 +86,10 @@ export function Hero() {
               custom={0.4}
               className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button href={SIGNUP_URL} className="px-8 py-3.5">
+              <Button href={SIGNUP_URL} className="px-8 py-3.5" onClick={() => { trackCta("Get Started", "hero"); trackAppNavigation(SIGNUP_URL, "Get Started"); }}>
                 Get Started
               </Button>
-              <Button variant="outline" href="#pricing" className="px-8 py-3.5">
+              <Button variant="outline" href="#pricing" className="px-8 py-3.5" onClick={() => trackCta("View Pricing", "hero")}>
                 View Pricing
               </Button>
             </motion.div>

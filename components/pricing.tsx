@@ -8,6 +8,7 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Divider } from "./ui/divider";
 import { SIGNUP_URL } from "@/lib/urls";
+import { trackCta, trackAppNavigation } from "@/lib/analytics";
 
 const plans = [
   {
@@ -131,6 +132,7 @@ export function Pricing() {
                   href={SIGNUP_URL}
                   variant={plan.highlighted ? "solid" : "outline"}
                   className="w-full"
+                  onClick={() => { trackCta(plan.cta, "pricing"); trackAppNavigation(SIGNUP_URL, plan.cta); }}
                 >
                   {plan.cta}
                 </Button>

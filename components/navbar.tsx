@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
 import { SIGNUP_URL, LOGIN_URL } from "@/lib/urls";
+import { trackCta, trackAppNavigation } from "@/lib/analytics";
 
 const LOGO_URL =
   "https://xrcwdxbwtnmxyahbgrlw.supabase.co/storage/v1/object/public/app-assets/logos/Room%20Genie%20-%20Small%20-%20Transparent.png";
@@ -71,11 +72,12 @@ export function Navbar() {
             <span className="w-px h-4 bg-white/15" />
             <a
               href={LOGIN_URL}
+              onClick={() => { trackCta("Sign In", "navbar"); trackAppNavigation(LOGIN_URL, "Sign In"); }}
               className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-300"
             >
               Sign In
             </a>
-            <Button href={SIGNUP_URL} className="text-xs px-5 py-2.5">
+            <Button href={SIGNUP_URL} className="text-xs px-5 py-2.5" onClick={() => { trackCta("Get Started", "navbar"); trackAppNavigation(SIGNUP_URL, "Get Started"); }}>
               Get Started
             </Button>
           </div>
@@ -134,7 +136,7 @@ export function Navbar() {
               <span className="h-px w-full bg-white/[0.06]" />
               <a
                 href={LOGIN_URL}
-                onClick={() => setMobileOpen(false)}
+                onClick={() => { setMobileOpen(false); trackCta("Sign In", "navbar"); trackAppNavigation(LOGIN_URL, "Sign In"); }}
                 className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-300 py-2"
               >
                 Sign In
@@ -142,6 +144,7 @@ export function Navbar() {
               <Button
                 href={SIGNUP_URL}
                 className="mt-2 w-full text-center"
+                onClick={() => { trackCta("Get Started", "navbar"); trackAppNavigation(SIGNUP_URL, "Get Started"); }}
               >
                 Get Started
               </Button>
