@@ -45,6 +45,11 @@ const faqGroups = [
         answer:
           "Notifications are sent via email. SMS notifications are coming very soon.",
       },
+      {
+        question: "What types of rates does Room Genie monitor?",
+        answer:
+          "Not at this time. Room Genie monitors standard publicly available rates, which can include general promotions that Disney offers to all guests. However, discounted rates for Disney Visa cardholders, Florida Residents, and Annual Passholders are not currently supported.",
+      },
     ],
   },
   {
