@@ -77,7 +77,7 @@ export function Hero() {
               className="mt-7 text-lg sm:text-xl text-text-secondary max-w-xl leading-relaxed"
             >
               Monitor Walt Disney World resort availability with alerting
-              and/or compare live pricing across multiple resorts with the click of a button.
+              and/or compare live pricing across Disney World, Disneyland, Disney Cruise Line, and Aulani — all in one place.
             </motion.p>
 
             {/* CTAs */}
@@ -96,7 +96,7 @@ export function Hero() {
 
             {/* SMS Badge */}
             <motion.div variants={fadeUp} custom={0.5} className="mt-8 flex justify-center lg:justify-start">
-              <Badge variant="gold">SMS Alerts Coming Soon</Badge>
+              <Badge variant="gold">SMS &amp; Email Alerts Live</Badge>
             </motion.div>
           </div>
 
