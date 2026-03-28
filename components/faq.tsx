@@ -21,9 +21,9 @@ const faqGroups = [
           "There is no free trial or free tier. However, single alert credits are available for purchase without a subscription, so you can try the service without committing to a monthly plan.",
       },
       {
-        question: "Which parks does Room Genie support?",
+        question: "Which Disney destinations does Room Genie support?",
         answer:
-          "Room Genie monitors all Walt Disney World resort properties, including Value, Moderate, Deluxe, and Deluxe Villa resorts.",
+          "Availability alerts monitor all Walt Disney World resort properties, including Value, Moderate, Deluxe, and Deluxe Villa resorts. Explore Rates goes further — comparing live pricing across Walt Disney World, Disney Cruise Line, Disneyland, and Disney's Aulani Resort in Hawaii.",
       },
     ],
   },
@@ -43,7 +43,7 @@ const faqGroups = [
       {
         question: "How will I be notified?",
         answer:
-          "Notifications are sent via email. SMS notifications are coming very soon.",
+          "Notifications are sent via email and SMS. You can enable SMS alerts by adding and verifying your phone number in your account settings.",
       },
       {
         question: "What types of rates does Room Genie monitor?",
@@ -58,7 +58,17 @@ const faqGroups = [
       {
         question: "What is Explore Rates?",
         answer:
-          "Explore Rates lets you enter your trip details once and compare live pricing across multiple Walt Disney World resorts simultaneously — including rooms, tickets, dining plans, and Memory Maker.",
+          "Explore Rates lets you enter your trip details once and compare live pricing across multiple Disney destinations simultaneously. It now covers Walt Disney World, Disney Cruise Line, Disneyland, and Disney's Aulani Resort in Hawaii.",
+      },
+      {
+        question: "Which Disney destinations does Explore Rates support?",
+        answer:
+          "Explore Rates supports Walt Disney World (all resorts), Disney Cruise Line (all ships and itineraries), Disneyland Resort (Disneyland Hotel, Disney's Grand Californian, and Pixar Place Hotel), and Disney's Aulani Resort & Spa in Ko Olina, Hawaii.",
+      },
+      {
+        question: "Can I compare pricing across different Disney destinations?",
+        answer:
+          "Explore Rates compares options within each destination. For example, you can compare all Walt Disney World resorts side by side, or compare Disney Cruise Line itineraries — helping you find the best value for each type of Disney vacation.",
       },
       {
         question: "How current is the pricing data?",
@@ -93,7 +103,7 @@ const faqGroups = [
       {
         question: "What happens if my payment fails?",
         answer:
-          "Your subscription moves to a past-due status. You'll see a banner in the app prompting you to update your payment method.",
+          "Your subscription moves to a past-due status. While past due, the app will redirect you to update your payment method each time you log in until payment is successfully resolved.",
       },
       {
         question: "Can I upgrade or downgrade my plan?",

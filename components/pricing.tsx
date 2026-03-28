@@ -21,7 +21,7 @@ const plans = [
     cta: "Get Started",
     features: [
       "Notified when your room opens up or drops in price",
-      "Email notifications",
+      "Email & SMS notifications",
       "Purchase 1–10 credits at a time",
       "Credits last a full year",
       "No subscription required",
@@ -38,7 +38,7 @@ const plans = [
     features: [
       "Unlimited alerts across all WDW resorts",
       "Edit, pause & reactivate any alert anytime",
-      "Email notifications when conditions are met",
+      "Email & SMS notifications when conditions are met",
       "Monitor every room type at every resort",
       "Cancel anytime — no commitment",
     ],
@@ -53,10 +53,10 @@ const plans = [
     cta: "Start Exploring",
     features: [
       "Everything in Watcher, plus Explore Rates",
-      "Compare multiple resorts side by side in one search",
-      "See full trip pricing — rooms, tickets, dining & Memory Maker",
+      "Compare resorts, cruises & hotels side by side",
+      "Walt Disney World, Disneyland, Disney Cruise Line & Aulani",
       "Live pricing from publicly available Disney sources",
-      "Find the best value resort for your dates instantly",
+      "Find the best value across all of Disney instantly",
     ],
   },
 ];
@@ -142,7 +142,7 @@ export function Pricing() {
         </div>
 
         <p className="mt-6 text-center text-xs text-text-tertiary">
-          SMS alerts coming soon. Email notifications are live today.
+          Email and SMS notifications are live. Cancel anytime.
         </p>
       </Container>
     </section>

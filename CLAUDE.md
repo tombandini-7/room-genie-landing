@@ -41,7 +41,7 @@ Key files for pricing/plan accuracy:
 - Availability alerts check Disney every 30 minutes
 - Price drop alerts notify when price falls below user's target
 - Explore Rates compares 10+ WDW resorts simultaneously with live pricing
-- Notifications: email (live), SMS (coming soon)
+- Notifications: email and SMS (both live)
 - Single alert credits expire after 1 year from purchase
 - Subscriptions cancel anytime, no commitment
 

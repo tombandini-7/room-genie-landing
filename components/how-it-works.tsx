@@ -31,19 +31,19 @@ const exploreSteps = [
     number: "1",
     title: "Enter Your Trip Details",
     description:
-      "Package type, dates, and number of guests — enter your details once.",
+      "Choose your Disney destination — Walt Disney World, Disneyland, Disney Cruise Line, or Aulani — then enter your dates and guests.",
   },
   {
     number: "2",
-    title: "Compare Every Resort",
+    title: "Compare Every Option",
     description:
-      "See live pricing across multiple Walt Disney World resorts displayed side by side.",
+      "See live pricing across multiple resorts, ships, or hotels displayed side by side.",
   },
   {
     number: "3",
     title: "Find the Best Value",
     description:
-      "Rooms, tickets, dining plans, and Memory Maker — all compared so you can find the best value.",
+      "Rooms, tickets, dining plans, and more — all compared so you can find the best value across all of Disney.",
   },
 ];
 
@@ -107,7 +107,7 @@ export function HowItWorks() {
         <SectionReveal>
           <SectionHeading>How It Works</SectionHeading>
           <p className="mt-5 text-center text-text-secondary max-w-2xl mx-auto">
-            Two powerful tools to help you find the perfect Disney resort room at the best price.
+            Two powerful tools to help you find the perfect Disney vacation at the best price.
           </p>
         </SectionReveal>
 
