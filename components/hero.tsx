@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { PhoneMockup } from "./phone-mockup";
 import { SIGNUP_URL } from "@/lib/urls";
 import { trackCta, trackAppNavigation } from "@/lib/analytics";
 
@@ -22,7 +23,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-0">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 lg:pt-28">
       {/* Layered background gradients */}
       <div className="absolute inset-0">
         <div
@@ -54,7 +55,7 @@ export function Hero() {
         <motion.div
           initial="hidden"
           animate="visible"
-          className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16"
+          className="flex flex-col lg:flex-row items-center gap-10 lg:gap-10"
         >
           {/* Left: Text content */}
           <div className="flex-1 text-center lg:text-left">
@@ -100,23 +101,13 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Demo Video */}
+          {/* Right: Phone Mockup */}
           <motion.div
             variants={fadeUp}
             custom={0.3}
-            className="w-full lg:w-[55%] lg:flex-none"
+            className="w-full lg:w-auto lg:flex-none lg:-ml-6"
           >
-            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/5">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                className="w-full"
-                src="/video/demo-v8.mp4"
-              />
-            </div>
+            <PhoneMockup />
           </motion.div>
         </motion.div>
       </Container>
