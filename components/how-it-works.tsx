@@ -47,6 +47,27 @@ const exploreSteps = [
   },
 ];
 
+const claudeSteps = [
+  {
+    number: "1",
+    title: "Connect Claude",
+    description:
+      "From Connected Apps, paste the MCP URL into Claude Desktop or run one command in Claude Code. Sign in once.",
+  },
+  {
+    number: "2",
+    title: "Ask in Plain English",
+    description:
+      "Tell Claude the resort, dates, and party. It calls Room Genie\u2019s tools, prices live, and asks the right add-on questions.",
+  },
+  {
+    number: "3",
+    title: "Send a Branded PDF",
+    description:
+      "Claude generates a multi-page PDF with your agency branding — saved to your dashboard and ready to share.",
+  },
+];
+
 function StepColumn({
   title,
   steps,
@@ -107,18 +128,21 @@ export function HowItWorks() {
         <SectionReveal>
           <SectionHeading>How It Works</SectionHeading>
           <p className="mt-5 text-center text-text-secondary max-w-2xl mx-auto">
-            Two powerful tools to help you find the perfect Disney vacation at the best price.
+            Three ways to find the perfect Disney trip — and quote it for clients in seconds.
           </p>
         </SectionReveal>
 
         <Divider />
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-14 lg:gap-12">
           <SectionReveal delay={0.1}>
             <StepColumn title="Availability Alerts" steps={alertSteps} />
           </SectionReveal>
-          <SectionReveal delay={0.25}>
+          <SectionReveal delay={0.2}>
             <StepColumn title="Explore Rates" steps={exploreSteps} />
+          </SectionReveal>
+          <SectionReveal delay={0.3}>
+            <StepColumn title="Quote with Claude" steps={claudeSteps} />
           </SectionReveal>
         </div>
       </Container>
