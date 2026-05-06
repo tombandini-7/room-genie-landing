@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { AnnouncementBanner } from "@/components/announcement-banner";
 import { ExploreShowcase } from "@/components/explore-showcase";
+import { ClaudeQuoteFlow } from "@/components/claude-quote-flow";
 import { HowItWorks } from "@/components/how-it-works";
 import { Pricing } from "@/components/pricing";
 import { FAQ } from "@/components/faq";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <AnnouncementBanner />
       <ExploreShowcase />
+      <ClaudeQuoteFlow />
       <HowItWorks />
       <Pricing />
       <FAQ />

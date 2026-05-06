@@ -78,6 +78,31 @@ const faqGroups = [
     ],
   },
   {
+    category: "For Travel Agents",
+    items: [
+      {
+        question: "What is the Claude integration?",
+        answer:
+          "Room Genie ships an MCP (Model Context Protocol) server that connects directly to Claude Desktop or Claude Code. Once connected, you can ask Claude to price a Disney trip in plain English — Claude calls Room Genie's tools to pull live pricing, walks the add-on questions for tickets, dining, Memory Maker, and Travel Protection, and generates a branded quote PDF without leaving the chat.",
+      },
+      {
+        question: "How do I connect Claude to Room Genie?",
+        answer:
+          "From Connected Apps in your Room Genie settings, copy the MCP server URL into Claude Desktop's Custom Connectors, or run a one-line command in Claude Code. Authentication is a one-time OAuth sign-in — no API keys to manage. The Claude integration requires the Explorer plan.",
+      },
+      {
+        question: "Are the quote PDFs branded with my agency?",
+        answer:
+          "Yes. Set your agency profile once — logo, accent color, advisor name, contact info, hero image — and every PDF is rendered with your branding. PDFs include a cover, per-room sections with package add-ons, deposit and final payment dates, and your terms. They're saved to your Quotes dashboard so you can re-share or update them later.",
+      },
+      {
+        question: "What kinds of trips can Claude quote?",
+        answer:
+          "Walt Disney World resorts (room-only or full packages with park tickets, dining, Memory Maker, and Travel Protection), Disneyland (room-only or with tickets), Aulani, and Disney Cruise Line — including multi-stateroom cruise quotes that price every category in a single PDF.",
+      },
+    ],
+  },
+  {
     category: "Plans & Credits",
     items: [
       {
