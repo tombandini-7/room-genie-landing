@@ -13,17 +13,22 @@ const faqGroups = [
       {
         question: "What is Room Genie?",
         answer:
-          "Room Genie is a monitoring service for Walt Disney World resort availability and pricing. Set alerts for your desired resort, room type, and dates — and get notified when a room opens up or a price drops below your target.",
+          "Room Genie watches resort availability and pricing for you. Set alerts for your desired resort, room type, and dates — and get a text and email when a room opens up or a price drops below your target. Explorer members can also compare live rates across Disney and Universal destinations and share them as PDF quotes.",
+      },
+      {
+        question: "Is there a discount for new customers?",
+        answer:
+          "Yes! Enter code SOCIAL50 at checkout to get 50% off your first purchase — that's $2.50 per single alert, $9.50 for your first month of Watcher, or $14.50 for your first month of Explorer. Subscriptions renew at the regular monthly price and you can cancel anytime.",
       },
       {
         question: "Is there a free trial?",
         answer:
-          "There is no free trial or free tier. However, single alert credits are available for purchase without a subscription, so you can try the service without committing to a monthly plan.",
+          "There is no free trial or free tier. However, single alert credits are available for purchase without a subscription, so you can try the service without committing to a monthly plan — and with code SOCIAL50 your first purchase is half off.",
       },
       {
-        question: "Which Disney destinations does Room Genie support?",
+        question: "Which destinations does Room Genie support?",
         answer:
-          "Availability alerts monitor all Walt Disney World resort properties, including Value, Moderate, Deluxe, and Deluxe Villa resorts. Explore Rates goes further — comparing live pricing across Walt Disney World, Disney Cruise Line, Disneyland, and Disney's Aulani Resort in Hawaii.",
+          "Availability and price-drop alerts cover Walt Disney World, Disneyland Resort, Disney's Aulani Resort, and Universal Orlando's on-site hotels. Explorer members can also set alerts on Disney Cruise Line staterooms — even on sold-out sailings — and compare live pricing across all five destinations with Explore Rates.",
       },
     ],
   },
@@ -33,7 +38,7 @@ const faqGroups = [
       {
         question: "How does an availability alert work?",
         answer:
-          "You set your desired resort, room type, and travel dates. Room Genie checks Disney resort availability every 30 minutes. When your room becomes available, we send you an email notification.",
+          "You set your desired resort, one or more room types, and travel dates. Room Genie checks availability every 30 minutes. When your room becomes available, we send you an email and text message. Alerts pause automatically once your check-in date has passed.",
       },
       {
         question: "What's the difference between an availability alert and a price alert?",
@@ -58,12 +63,27 @@ const faqGroups = [
       {
         question: "What is Explore Rates?",
         answer:
-          "Explore Rates lets you enter your trip details once and compare live pricing across multiple Disney destinations simultaneously. It now covers Walt Disney World, Disney Cruise Line, Disneyland, and Disney's Aulani Resort in Hawaii.",
+          "Explore Rates lets you enter your trip details once and compare live pricing across many resorts side by side. It covers Walt Disney World, Disney Cruise Line, Disneyland, Disney's Aulani Resort in Hawaii, and Universal Orlando.",
       },
       {
-        question: "Which Disney destinations does Explore Rates support?",
+        question: "Which destinations does Explore Rates support?",
         answer:
-          "Explore Rates supports Walt Disney World (all resorts), Disney Cruise Line (all ships and itineraries), Disneyland Resort (Disneyland Hotel, Disney's Grand Californian, and Pixar Place Hotel), and Disney's Aulani Resort & Spa in Ko Olina, Hawaii.",
+          "Explore Rates supports Walt Disney World (all resorts), Disney Cruise Line (all ships and itineraries, including sold-out sailings), Disneyland Resort (Disneyland Hotel, Disney's Grand Californian, and Pixar Place Hotel), Disney's Aulani Resort & Spa in Ko Olina, Hawaii, and all 11 on-site Universal Orlando hotels — with park tickets, Express Pass, and SuperStar Shuttle pricing.",
+      },
+      {
+        question: "Can Room Genie find Disney special offers?",
+        answer:
+          "Yes. When you price a Walt Disney World package, Room Genie also checks Disney's current special offers and shows you a \"Better Rate\" whenever a promotion beats the standard price — including how much you'd save.",
+      },
+      {
+        question: "Can I create a quote to share?",
+        answer:
+          "Explorer members can turn any comparison into a polished PDF quote in one click — with per-room pricing, deposits, payment due dates, and optional add-ons. Multi-room trips get per-room pricing and a combined total.",
+      },
+      {
+        question: "Can I use Room Genie with Claude?",
+        answer:
+          "Yes. Connect Room Genie to Claude from your account's Connected Apps settings, then plan in plain English — ask Claude to price resorts, compare rooms, build a PDF quote, or set alerts for you.",
       },
       {
         question: "Can I compare pricing across different Disney destinations?",

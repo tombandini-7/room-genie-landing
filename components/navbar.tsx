@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
+import { PromoBar } from "./promo-bar";
 import { SIGNUP_URL, LOGIN_URL } from "@/lib/urls";
 import { trackCta, trackAppNavigation } from "@/lib/analytics";
 
@@ -11,6 +12,7 @@ const LOGO_URL =
   "https://xrcwdxbwtnmxyahbgrlw.supabase.co/storage/v1/object/public/app-assets/logos/Room%20Genie%20-%20Small%20-%20Transparent.png";
 
 const navLinks = [
+  { label: "What's New", href: "/#whats-new" },
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQ", href: "/#faq" },
@@ -42,6 +44,7 @@ export function Navbar() {
         WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
       }}
     >
+      <PromoBar />
       <Container>
         <div
           className="flex items-center justify-between transition-all duration-500"

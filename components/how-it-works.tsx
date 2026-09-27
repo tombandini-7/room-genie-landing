@@ -10,19 +10,19 @@ const alertSteps = [
     number: "1",
     title: "Set Your Alert",
     description:
-      "Pick your resort, room type, and travel dates. Set a target price for price-drop notifications.",
+      "Pick your resort or sailing, one or more room types, and travel dates. Set a target price for price-drop notifications.",
   },
   {
     number: "2",
     title: "We Watch For You",
     description:
-      "Room Genie checks Disney every 30 minutes, 24/7. No manual refreshing required.",
+      "Room Genie checks availability every 30 minutes, 24/7. No manual refreshing required.",
   },
   {
     number: "3",
     title: "Get Notified Instantly",
     description:
-      "Receive an email when your room becomes available or the price drops below your target.",
+      "Get a text and an email the moment your room becomes available or the price drops below your target.",
   },
 ];
 
@@ -31,7 +31,7 @@ const exploreSteps = [
     number: "1",
     title: "Enter Your Trip Details",
     description:
-      "Choose your Disney destination — Walt Disney World, Disneyland, Disney Cruise Line, or Aulani — then enter your dates and guests.",
+      "Choose your destination — Walt Disney World, Disneyland, Disney Cruise Line, Aulani, or Universal Orlando — then enter your dates and guests.",
   },
   {
     number: "2",
@@ -43,7 +43,7 @@ const exploreSteps = [
     number: "3",
     title: "Find the Best Value",
     description:
-      "Rooms, tickets, dining plans, and more — all compared so you can find the best value across all of Disney.",
+      "Rooms, tickets, dining, Express Pass, and Disney special offers — compared side by side, then shared as a polished PDF quote.",
   },
 ];
 
@@ -107,7 +107,7 @@ export function HowItWorks() {
         <SectionReveal>
           <SectionHeading>How It Works</SectionHeading>
           <p className="mt-5 text-center text-text-secondary max-w-2xl mx-auto">
-            Two powerful tools to help you find the perfect Disney vacation at the best price.
+            Two powerful tools to help you find the perfect vacation at the best price.
           </p>
         </SectionReveal>
 

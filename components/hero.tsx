@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { PhoneMockup } from "./phone-mockup";
+import { HeroShowcase } from "./hero-showcase";
 import { SIGNUP_URL } from "@/lib/urls";
 import { trackCta, trackAppNavigation } from "@/lib/analytics";
+import { PROMO_CODE, PROMO_PERCENT } from "@/lib/promo";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -23,7 +24,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 lg:pt-28">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-36 lg:pt-40">
       {/* Layered background gradients */}
       <div className="absolute inset-0">
         <div
@@ -77,8 +78,9 @@ export function Hero() {
               custom={0.25}
               className="mt-7 text-lg sm:text-xl text-text-secondary max-w-xl leading-relaxed"
             >
-              Monitor Walt Disney World resort availability with alerting
-              and/or compare live pricing across Disney World, Disneyland, Disney Cruise Line, and Aulani — all in one place.
+              Get a text the moment a sold-out room opens up or the price drops.
+              Compare live rates across Disney World, Disneyland, Aulani, Disney
+              Cruise Line — and now Universal Orlando — all in one place.
             </motion.p>
 
             {/* CTAs */}
@@ -87,17 +89,25 @@ export function Hero() {
               custom={0.4}
               className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button href={SIGNUP_URL} className="px-8 py-3.5" onClick={() => { trackCta("Get Started", "hero"); trackAppNavigation(SIGNUP_URL, "Get Started"); }}>
-                Get Started
+              <Button href={SIGNUP_URL} className="px-8 py-3.5" onClick={() => { trackCta("Get Started 50% Off", "hero"); trackAppNavigation(SIGNUP_URL, "Get Started 50% Off"); }}>
+                Get Started — {PROMO_PERCENT}% Off
               </Button>
               <Button variant="outline" href="#pricing" className="px-8 py-3.5" onClick={() => trackCta("View Pricing", "hero")}>
                 View Pricing
               </Button>
             </motion.div>
 
-            {/* SMS Badge */}
-            <motion.div variants={fadeUp} custom={0.5} className="mt-8 flex justify-center lg:justify-start">
-              <Badge variant="gold">SMS &amp; Email Alerts Live</Badge>
+            <motion.p
+              variants={fadeUp}
+              custom={0.45}
+              className="mt-4 text-sm text-text-tertiary text-center lg:text-left"
+            >
+              Use code <span className="font-semibold tracking-widest text-gold-light">{PROMO_CODE}</span> at checkout for {PROMO_PERCENT}% off your first purchase.
+            </motion.p>
+
+            <motion.div variants={fadeUp} custom={0.5} className="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start">
+              <Badge variant="gold">New: Universal Orlando</Badge>
+              <Badge variant="muted">SMS &amp; Email Alerts</Badge>
             </motion.div>
           </div>
 
@@ -105,9 +115,9 @@ export function Hero() {
           <motion.div
             variants={fadeUp}
             custom={0.3}
-            className="w-full lg:w-auto lg:flex-none lg:-ml-6"
+            className="w-full lg:w-auto lg:flex-none"
           >
-            <PhoneMockup />
+            <HeroShowcase />
           </motion.div>
         </motion.div>
       </Container>
