@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import clsx from "clsx";
 import { Container } from "./ui/container";
 import { Badge } from "./ui/badge";
 
@@ -20,6 +21,11 @@ const destinations = [
   {
     name: "Disney Aulani",
     icon: "🌺",
+  },
+  {
+    name: "Universal Orlando",
+    icon: "🎬",
+    isNew: true,
   },
 ];
 
@@ -54,7 +60,7 @@ export function AnnouncementBanner() {
           {/* NEW badge */}
           <motion.div variants={fadeUp} custom={0}>
             <Badge variant="gold" className="text-xs tracking-widest mb-6">
-              New — Now Live
+              New — Universal Orlando Now Live
             </Badge>
           </motion.div>
 
@@ -65,8 +71,8 @@ export function AnnouncementBanner() {
             className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-text-primary"
             style={{ letterSpacing: "-0.025em", lineHeight: 1.15 }}
           >
-            Explore Rates Now Covers{" "}
-            <span className="text-gold-gradient">All of Disney</span>
+            All of Disney.{" "}
+            <span className="text-gold-gradient">Now Universal, Too.</span>
           </motion.h2>
 
           {/* Subtext */}
@@ -75,15 +81,15 @@ export function AnnouncementBanner() {
             custom={0.2}
             className="mt-5 text-text-secondary text-lg max-w-2xl mx-auto leading-relaxed"
           >
-            Compare live pricing across Walt Disney World, Disney Cruise Line,
-            Disneyland, and Aulani — all from one search.
+            Five destinations, one search. Compare live pricing across Walt Disney
+            World, Disney Cruise Line, Disneyland, Aulani, and Universal Orlando.
           </motion.p>
 
           {/* Destination cards */}
           <motion.div
             variants={fadeUp}
             custom={0.35}
-            className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
+            className="mt-10 grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4"
           >
             {destinations.map((dest, i) => (
               <motion.div
@@ -96,8 +102,18 @@ export function AnnouncementBanner() {
                   delay: 0.4 + i * 0.1,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="group relative rounded-xl border border-gold/15 bg-white/[0.02] p-5 hover:border-gold/30 hover:bg-gold/[0.04] transition-all duration-300"
+                className={clsx(
+                  "group relative rounded-xl border p-5 transition-all duration-300 hover:border-gold/30 hover:bg-gold/[0.04]",
+                  dest.isNew
+                    ? "col-span-2 sm:col-span-1 border-gold/40 bg-gold/[0.06] gold-border-glow"
+                    : "border-gold/15 bg-white/[0.02]"
+                )}
               >
+                {dest.isNew && (
+                  <span className="absolute top-2.5 right-2.5 rounded-full bg-gold px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-primary">
+                    New
+                  </span>
+                )}
                 <div className="text-3xl mb-3">{dest.icon}</div>
                 <p className="text-sm font-medium text-text-primary leading-tight">
                   {dest.name}

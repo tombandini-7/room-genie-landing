@@ -22,7 +22,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 7rem;
 }
 
 body {
@@ -59,4 +59,32 @@ body {
     linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
+}
+
+/* Gold sheen that sweeps across the promo bar */
+.promo-sheen {
+  background: linear-gradient(90deg, transparent, rgba(212, 185, 106, 0.18), transparent);
+  animation: promo-sheen 6s ease-in-out infinite;
+}
+
+@keyframes promo-sheen {
+  0% { transform: translateX(0); }
+  60%, 100% { transform: translateX(400%); }
+}
+
+/* Slow shimmer on the golden ticket border */
+.ticket-border {
+  background: linear-gradient(120deg, #9a8249, #d4b96a, #f0dca0, #d4b96a, #9a8249);
+  background-size: 300% 300%;
+  animation: ticket-shimmer 8s ease-in-out infinite;
+}
+
+@keyframes ticket-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-sheen { animation: none; opacity: 0; }
+  .ticket-border { animation: none; }
 }

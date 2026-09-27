@@ -16,9 +16,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Disney Resort Reservation Alerts & Rates - Room Genie",
+  title: "Disney & Universal Resort Availability Alerts & Rates - Room Genie",
   description:
-    "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across multiple resorts at one time. Get notified when your dream Disney room opens up.",
+    "Get a text when your sold-out Disney or Universal Orlando room opens up or drops in price, and compare live rates across Disney World, Disneyland, Aulani, Disney Cruise Line, and Universal Orlando. 50% off your first purchase with code SOCIAL50.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Room Genie — Never Miss Your Dream Disney Room",
     description:
-      "Monitor Walt Disney World resort availability every 30 minutes and compare live pricing across multiple resorts.",
+      "Availability and price-drop alerts plus live rate comparisons for Disney and Universal Orlando. 50% off your first purchase with code SOCIAL50.",
     type: "website",
   },
 };

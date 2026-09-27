@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { HeroShowcase } from "./hero-showcase";
 import { SIGNUP_URL } from "@/lib/urls";
 import { trackCta, trackAppNavigation } from "@/lib/analytics";
-
-const HERO_CLAUDE_SHOT =
-  "https://ysxkvjimngygmlmnnvwm.supabase.co/storage/v1/object/public/app-assets/hero-images/Claude%20Screenshot.png";
+import { PROMO_CODE, PROMO_PERCENT } from "@/lib/promo";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -25,10 +24,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 lg:pt-24 pb-16 lg:pb-12"
-    >
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-36 lg:pt-40 pb-16 lg:pb-12">
       {/* Layered background gradients */}
       <div className="absolute inset-0">
         <div
@@ -60,7 +56,7 @@ export function Hero() {
         <motion.div
           initial="hidden"
           animate="visible"
-          className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12"
+          className="flex flex-col lg:flex-row items-center gap-10 lg:gap-10"
         >
           {/* Left: Text content */}
           <div className="flex-1 text-center lg:text-left">
@@ -71,9 +67,9 @@ export function Hero() {
               className="font-display text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-semibold"
               style={{ letterSpacing: "-0.025em", lineHeight: 1.1 }}
             >
-              Accurate Disney{" "}
-              <span className="text-gold-gradient">Pricing</span>, in Plain
-              English
+              Never Miss Your Dream{" "}
+              <span className="text-gold-gradient">Disney Room</span>{" "}
+              Again
             </motion.h1>
 
             {/* Subheadline */}
@@ -82,10 +78,9 @@ export function Hero() {
               custom={0.25}
               className="mt-7 text-lg sm:text-xl text-text-secondary max-w-xl leading-relaxed"
             >
-              Compare live package totals across every Disney destination —
-              priced to the dollar, side-by-side. Set availability alerts and
-              send branded quote PDFs to clients. Right inside a Claude
-              conversation.
+              Get a text the moment a sold-out room opens up or the price drops.
+              Compare live rates across Disney World, Disneyland, Aulani, Disney
+              Cruise Line — and now Universal Orlando — all in one place.
             </motion.p>
 
             {/* Accuracy proof points */}
@@ -95,7 +90,7 @@ export function Hero() {
               className="mt-6 flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start text-sm text-text-secondary"
             >
               {[
-                "Pulled live from Disney",
+                "Pulled live from Disney & Universal",
                 "Matches the booking cart",
                 "Multi-resort, multi-room",
               ].map((line) => (
@@ -123,119 +118,39 @@ export function Hero() {
             {/* CTAs */}
             <motion.div
               variants={fadeUp}
-              custom={0.45}
-              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              custom={0.4}
+              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button
-                href={SIGNUP_URL}
-                className="px-8 py-3.5"
-                onClick={() => {
-                  trackCta("Get Started", "hero");
-                  trackAppNavigation(SIGNUP_URL, "Get Started");
-                }}
-              >
-                Get Started
+              <Button href={SIGNUP_URL} className="px-8 py-3.5" onClick={() => { trackCta("Get Started 50% Off", "hero"); trackAppNavigation(SIGNUP_URL, "Get Started 50% Off"); }}>
+                Get Started — {PROMO_PERCENT}% Off
               </Button>
-              <Button
-                variant="outline"
-                href="#pricing"
-                className="px-8 py-3.5"
-                onClick={() => trackCta("View Pricing", "hero")}
-              >
+              <Button variant="outline" href="#pricing" className="px-8 py-3.5" onClick={() => trackCta("View Pricing", "hero")}>
                 View Pricing
               </Button>
             </motion.div>
 
-            {/* Badges */}
-            <motion.div
+            <motion.p
               variants={fadeUp}
-              custom={0.55}
-              className="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start"
+              custom={0.45}
+              className="mt-4 text-sm text-text-tertiary text-center lg:text-left"
             >
-              <Badge variant="gold">SMS &amp; Email Alerts Live</Badge>
-              <Badge variant="gold">Now in Claude Desktop &amp; Claude Code</Badge>
+              Use code <span className="font-semibold tracking-widest text-gold-light">{PROMO_CODE}</span> at checkout for {PROMO_PERCENT}% off your first purchase.
+            </motion.p>
+
+            <motion.div variants={fadeUp} custom={0.5} className="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start">
+              <Badge variant="gold">New: Universal Orlando</Badge>
+              <Badge variant="muted">SMS &amp; Email Alerts</Badge>
+              <Badge variant="muted">Now in Claude</Badge>
             </motion.div>
           </div>
 
-          {/* Right: Real Claude conversation */}
+          {/* Right: Phone Mockup */}
           <motion.div
             variants={fadeUp}
             custom={0.3}
-            className="w-full lg:flex-1 lg:max-w-[520px]"
+            className="w-full lg:w-auto lg:flex-none"
           >
-            <div
-              className="relative rounded-2xl overflow-hidden"
-              style={{
-                background: "rgba(255,255,255,0.02)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                boxShadow:
-                  "0 30px 80px -20px rgba(0,0,0,0.55), 0 0 0 1px rgba(186,157,93,0.06)",
-              }}
-            >
-              {/* Caption strip on top */}
-              <div
-                className="flex items-center justify-between px-4 py-2.5"
-                style={{
-                  background: "rgba(255,255,255,0.03)",
-                  borderBottom: "1px solid rgba(255,255,255,0.06)",
-                }}
-              >
-                <div className="flex items-center gap-2">
-                  <span
-                    className="inline-flex h-4 w-4 items-center justify-center rounded-full"
-                    style={{ background: "rgba(186,157,93,0.18)" }}
-                  >
-                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" className="text-gold">
-                      <path
-                        d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <span className="text-[11px] font-medium text-white/70">
-                    Claude
-                  </span>
-                  <span className="text-[10px] text-white/25">·</span>
-                  <span className="text-[10px] text-white/45">
-                    Room Genie connected
-                  </span>
-                </div>
-                <span
-                  className="rounded-full px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-gold"
-                  style={{
-                    background: "rgba(186,157,93,0.1)",
-                    border: "1px solid rgba(186,157,93,0.22)",
-                  }}
-                >
-                  Live pricing
-                </span>
-              </div>
-
-              {/* Image — capped on desktop so hero fits viewport; bottom fades */}
-              <div className="relative bg-white">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={HERO_CLAUDE_SHOT}
-                  alt="A real Claude conversation pricing four Walt Disney World resorts side by side using Room Genie"
-                  className="block w-full h-auto lg:h-[560px] lg:object-cover lg:object-top"
-                  loading="eager"
-                />
-                <div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 100%)",
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Tiny caption under */}
-            <p className="mt-3 text-center text-[11px] text-text-tertiary tracking-wide">
-              Real Claude conversation — 4 resorts priced in one prompt.
-            </p>
+            <HeroShowcase />
           </motion.div>
         </motion.div>
       </Container>

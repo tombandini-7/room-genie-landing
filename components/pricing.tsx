@@ -9,8 +9,9 @@ import { Button } from "./ui/button";
 import { Divider } from "./ui/divider";
 import { SIGNUP_URL } from "@/lib/urls";
 import { trackCta, trackAppNavigation } from "@/lib/analytics";
+import { PROMO_CODE, PROMO_PERCENT, promoPrice } from "@/lib/promo";
 
-const plans = [
+export const plans = [
   {
     name: "Single Alert",
     price: "$5",
@@ -36,10 +37,10 @@ const plans = [
     highlighted: true,
     cta: "Start Watching",
     features: [
-      "Unlimited alerts across all WDW resorts",
+      "Unlimited alerts — Disney World, Disneyland, Aulani & Universal Orlando",
+      "Alert several room types at once",
       "Edit, pause & reactivate any alert anytime",
-      "Email & SMS notifications when conditions are met",
-      "Monitor every room type at every resort",
+      "Email & SMS the moment conditions are met",
       "Cancel anytime — no commitment",
     ],
   },
@@ -47,16 +48,17 @@ const plans = [
     name: "Explorer",
     price: "$29",
     unit: "/mo",
-    subtitle: "The complete Disney trip planning toolkit",
+    subtitle: "The complete Disney & Universal planning toolkit",
     badge: "Best Value",
     highlighted: false,
     cta: "Start Exploring",
     features: [
       "Everything in Watcher, plus Explore Rates",
-      "Compare resorts, cruises & hotels side by side",
-      "Walt Disney World, Disneyland, Disney Cruise Line & Aulani",
-      "Live pricing from publicly available Disney sources",
-      "Find the best value across all of Disney instantly",
+      "Compare live rates across 5 destinations, incl. Disney Cruise Line",
+      "Better Rate Finder surfaces Disney special offers",
+      "One-click PDF quotes, multi-room trips included",
+      "Cruise alerts, even on sold-out sailings",
+      "Plan by chatting with Room Genie in Claude",
     ],
   },
 ];
@@ -105,7 +107,7 @@ export function Pricing() {
                   <p className="mt-1.5 text-xs text-text-tertiary">{plan.subtitle}</p>
                 </div>
 
-                <div className="flex items-baseline gap-1 mb-6">
+                <div className="flex items-baseline gap-1">
                   <span
                     className="text-5xl font-display font-semibold text-text-primary"
                     style={{ letterSpacing: "-0.02em" }}
@@ -114,6 +116,10 @@ export function Pricing() {
                   </span>
                   <span className="text-text-tertiary text-sm">{plan.unit}</span>
                 </div>
+                <p className="mt-2 mb-6 inline-flex self-start items-center gap-1.5 rounded-md border border-dashed border-gold/40 bg-gold/[0.07] px-2.5 py-1 text-xs text-gold-light">
+                  <span className="font-semibold">{promoPrice(plan.price)}</span>
+                  {plan.unit === "/mo" ? "first month" : "per alert"} with {PROMO_CODE}
+                </p>
 
                 <div className="h-px bg-white/[0.06] mb-6" />
 
@@ -142,7 +148,7 @@ export function Pricing() {
         </div>
 
         <p className="mt-6 text-center text-xs text-text-tertiary">
-          Email and SMS notifications are live. Cancel anytime.
+          Enter code {PROMO_CODE} at checkout for {PROMO_PERCENT}% off your first purchase. Cancel anytime.
         </p>
       </Container>
     </section>
