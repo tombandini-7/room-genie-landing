@@ -14,6 +14,7 @@ const LOGO_URL =
 const navLinks = [
   { label: "What's New", href: "/#whats-new" },
   { label: "Features", href: "/#features" },
+  { label: "For Agents", href: "/#for-agents" },
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQ", href: "/#faq" },
 ];

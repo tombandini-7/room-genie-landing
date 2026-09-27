@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero";
 import { AnnouncementBanner } from "@/components/announcement-banner";
 import { WhatsNew } from "@/components/whats-new";
 import { ExploreShowcase } from "@/components/explore-showcase";
+import { ClaudeQuoteFlow } from "@/components/claude-quote-flow";
 import { HowItWorks } from "@/components/how-it-works";
 import { PromoTicket } from "@/components/promo-ticket";
 import { Pricing } from "@/components/pricing";
@@ -17,6 +18,7 @@ export default function Home() {
       <AnnouncementBanner />
       <WhatsNew />
       <ExploreShowcase />
+      <ClaudeQuoteFlow />
       <HowItWorks />
       <PromoTicket />
       <Pricing />

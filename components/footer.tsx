@@ -38,6 +38,16 @@ export function Footer() {
         <p className="text-xs text-text-tertiary">
           &copy; {new Date().getFullYear()} Room Genie. All rights reserved.
         </p>
+
+        <p className="max-w-2xl text-center text-[11px] leading-relaxed text-text-tertiary/70">
+          Room Genie is an independent service and is not affiliated with,
+          endorsed by, or sponsored by The Walt Disney Company, Disney
+          Destinations, LLC, or any of their subsidiaries or affiliates. All
+          Disney properties, ships, character names, and related marks are
+          trademarks of The Walt Disney Company. Pricing is retrieved from
+          publicly available Disney sources at the time of search; always
+          verify directly with Disney before booking.
+        </p>
       </Container>
     </footer>
   );

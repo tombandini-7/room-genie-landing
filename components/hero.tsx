@@ -24,7 +24,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-36 lg:pt-40">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-36 lg:pt-40 pb-16 lg:pb-12">
       {/* Layered background gradients */}
       <div className="absolute inset-0">
         <div
@@ -83,11 +83,43 @@ export function Hero() {
               Cruise Line — and now Universal Orlando — all in one place.
             </motion.p>
 
+            {/* Accuracy proof points */}
+            <motion.ul
+              variants={fadeUp}
+              custom={0.35}
+              className="mt-6 flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start text-sm text-text-secondary"
+            >
+              {[
+                "Pulled live from Disney & Universal",
+                "Matches the booking cart",
+                "Multi-resort, multi-room",
+              ].map((line) => (
+                <li key={line} className="flex items-center gap-2">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    className="shrink-0 text-gold"
+                  >
+                    <path
+                      d="M2.5 7.5l2.5 2.5L11.5 4"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  {line}
+                </li>
+              ))}
+            </motion.ul>
+
             {/* CTAs */}
             <motion.div
               variants={fadeUp}
               custom={0.4}
-              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Button href={SIGNUP_URL} className="px-8 py-3.5" onClick={() => { trackCta("Get Started 50% Off", "hero"); trackAppNavigation(SIGNUP_URL, "Get Started 50% Off"); }}>
                 Get Started — {PROMO_PERCENT}% Off
@@ -108,6 +140,7 @@ export function Hero() {
             <motion.div variants={fadeUp} custom={0.5} className="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start">
               <Badge variant="gold">New: Universal Orlando</Badge>
               <Badge variant="muted">SMS &amp; Email Alerts</Badge>
+              <Badge variant="muted">Now in Claude</Badge>
             </motion.div>
           </div>
 
